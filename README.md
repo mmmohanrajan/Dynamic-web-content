@@ -22,30 +22,30 @@ Steps:
 # Api info
 
 1.register a new user
-  - api/v1/account/register
-  Example payload:
-    {
-    "username":["This field is required."],
-    "email":["This field is required."],
-    "password":["This field is required."],
-    "confirm_password":["This field is required."]
-    }
+    - api/v1/account/register
+          Example payload:
+            {
+            "username":["This field is required."],
+            "email":["This field is required."],
+            "password":["This field is required."],
+            "confirm_password":["This field is required."]
+            }
     
 2. Login
-  - api/v1/account/login
-  Example payload:
-    {
-    "email":["This field is required."],
-    "password":["This field is required."]
-    }
+    - api/v1/account/login
+          Example payload:
+            {
+            "email":["This field is required."],
+            "password":["This field is required."]
+            }
     
-   - In response it will return a Token, we need to pass this token for upcomming request.
+    - In response it will return a Token, we need to pass this token for upcomming request.
        
 3. Dynamic add a pic and text for list of hotels stored on db.
     - api/v1/hotel
-   Example payload:
-   {
-   "name":["This field is required."],
-   "address":["This field is required."],
-   "images":["No file was submitted."]
-   }
+           Example payload:
+           {
+           "name":["This field is required."],
+           "address":["This field is required."],
+           "images":["No file was submitted."]
+           }
