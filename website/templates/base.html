@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html>
+<head>
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.min.css'%}">
+</head> 
+<body>
+	{% block nav %}{% endblock %}
+	<div style="display: none;" class="alert alert-success alert-dismissible">
+	  <strong>Success!</strong>
+	</div>
+	<div style="display: none;" class="alert alert-danger alert-dismissible">
+	  <strong>Failed!</strong>
+	</div>
+    <div class="wrapper">
+        <div class="container">
+            <h1>{% block head %}{% endblock %}</h1>
+            {% block content %}{% endblock %}
+        </div>
+    </div>
+
+    <script src="{% static 'js/jquery-3.3.1.min.js'%}"></script>
+    <script src="{% static 'js/bootstrap.min.js'%}"></script>
+    <script src="{% static 'js/fontawesome-all.min.js'%}"></script>
+    {% block script %}{% endblock %}
+</body>
+</html>
+
+
+
+

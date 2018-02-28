@@ -1,0 +1,65 @@
+<!-- login.html -->
+{% extends "base.html" %}
+{% block title %}Login{% endblock %}
+{% block content %}
+
+<form class="form-horizontal" role="form" method="POST" action="/login">
+    <div class="row">
+        <div class="col-md-4"></div>
+        <div class="col-md-4">
+            <h2>Login</h2>
+            <hr>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-4"></div>
+        <div class="col-md-4">
+            <div class="form-group has-danger">
+                <label class="sr-only" for="email">E-Mail Address</label>
+                <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                    <div class="input-group-addon" style="width: 2.0rem"><i class="fas fa-user"></i></div>
+                    <input type="text" name="email" class="form-control" id="email" placeholder="you@example.com" required autofocus>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-4"></div>
+        <div class="col-md-4">
+            <div class="form-group">
+                <label class="sr-only" for="password">Password</label>
+                <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                    <div class="input-group-addon" style="width: 2.0rem"><i class="fa fa-key"></i></div>
+                    <input type="password" name="password" class="form-control" id="password" placeholder="Password" required>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row" style="padding-top: 1rem">
+        <div class="col-md-4"></div>
+        <div class="col-md-4">
+            <a class="btn btn-success" id="register" href="register">Register</a>
+            <button type="button" id="login" class="btn btn-success float-right"><i class="fas fa-sign-in-alt"></i> Login</button>
+        </div>
+    </div>
+</form>
+
+{% endblock %}
+
+
+{% block script %}
+<script type="text/javascript">
+    $(document).ready(function(){
+        $('#login').on('click', function() {
+            var email = $('#email').val();
+            var password = $('#password').val();
+            // console.log(email, '#',password);
+            $.post( "http://localhost:8000/api/v1/account/login/", { email: email, password: password })
+              .done(function( data ) {
+                localStorage.setItem('token', data['token']);
+                location.href = 'home/'
+            });
+        });
+    });
+</script>
+{% endblock %}
