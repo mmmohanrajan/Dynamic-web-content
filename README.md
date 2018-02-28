@@ -6,7 +6,7 @@ Make sure python 3.5 installed on your system
 
 Steps:
 
-1. run install.sh file
+1. run install.sh file (note: only work for ubuntu machine)
     - it will install all dependancy as well as creates virtual env.
     - it will create a database
 
