@@ -19,6 +19,15 @@ Steps:
     - python manage.py migrate
     - python manage.py runserver
     
+
+# Webpages
+
+1. You can access, Login, register, home pages on following links
+	--> login - /
+	--> register - register/
+	--> home - home/
+
+
 # Api info
 
 1.register a new user
@@ -34,24 +43,24 @@ Steps:
     
 2. Login
 
-        - api/v1/account/login
-            Example payload:
-            {
-            "email":["This field is required."],
-            "password":["This field is required."]
-            }
-    
-        - In response it will return a Token, we need to pass this token for upcomming request.
+    - api/v1/account/login
+        Example payload:
+        {
+        "email":["This field is required."],
+        "password":["This field is required."]
+        }
+
+    - In response it will return a Token, we need to pass this token for upcomming request.
 
 
 3. Dynamic add a pic and text for list of hotels stored on db.
 
-        - api/v1/hotel
-            Example payload:
-            {
-            "name":["This field is required."],
-            "address":["This field is required."],
-            "images":["No file was submitted."]
-            }
-            
-         - We can do CRUD operation on this endpoint.
+    - api/v1/hotel
+        Example payload:
+        {
+        "name":["This field is required."],
+        "address":["This field is required."],
+        "images":["No file was submitted."]
+        }
+        
+     - We can do CRUD operation on this endpoint.
