@@ -53,3 +53,5 @@ Steps:
             "address":["This field is required."],
             "images":["No file was submitted."]
             }
+            
+         - We can do CRUD operation on this endpoint.
