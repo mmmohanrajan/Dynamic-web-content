@@ -46,6 +46,7 @@ function __create_database__(){
     sudo -u postgres psql -c "CREATE DATABASE $1;" 
     sudo -u postgres psql -c "CREATE USER $2 WITH PASSWORD '$3';" 
     sudo -u  postgres psql -c "GRANT ALL PRIVILEGES ON DATABASE $1 TO $2;" 
+    sudo -u  postgres psql -c "ALTER USER $2 CREATEDB;" 
 }
 
 #Check if database name already exists else call __create_database__

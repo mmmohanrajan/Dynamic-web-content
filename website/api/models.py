@@ -16,8 +16,6 @@ class UserManager(BaseUserManager):
         account = self.model(
             email=self.normalize_email(email),
             username=kwargs.get('username'),
-            # firstname=kwargs.get('firstname', None),
-            # lastname=kwargs.get('lastname', None),
         )
 
         account.set_password(password)
@@ -37,13 +35,8 @@ class UserManager(BaseUserManager):
 class User(AbstractBaseUser):
     username = models.CharField(max_length=50)
     email = models.EmailField(unique=True)
-
-    # firstname = models.CharField(max_length=100, blank=True)
-    # lastname = models.CharField(max_length=100, blank=True)
-
     date_created = models.DateTimeField(auto_now_add=True)
     date_modified = models.DateTimeField(auto_now=True)
-
     is_admin = models.BooleanField(default=False)
 
     objects = UserManager()
@@ -59,11 +52,5 @@ class Hotel(models.Model):
     images = models.ImageField()
     uploaded_by = models.ForeignKey(User, on_delete=models.CASCADE)
     uploaded_at = models.DateTimeField(auto_now_add=True)
-        
 
-# class Features(models.Model):
-#     """docstring for features"""
-#     hotel_name = models.ForeignKey(Hotel, on_delete=models.CASCADE)
-#     name = models.CharField(unique=True, max_length=100)
-#     images = models.ImageField()
 
