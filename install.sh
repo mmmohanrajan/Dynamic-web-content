@@ -3,8 +3,6 @@
 
 function install(){
     get_os
-    initialize
-
     # function_calling db_name user pwd
     create_database 'demo' 'demouser' 'demouser123'
 }
