@@ -6,7 +6,7 @@ Make sure python 3.5 installed on your system
 
 Steps:
 
-1. run install.sh file
+1. run install.sh file (note: only work for ubuntu machine)
     - it will install all dependancy as well as creates virtual env.
     - it will create a database
 
@@ -23,9 +23,9 @@ Steps:
 # Webpages
 
 1. You can access, Login, register, home pages on following links
-	--> login - /
-	--> register - register/
-	--> home - home/
+	* login - /
+	* register - register/
+	* home - home/
 
 
 # Api info
@@ -43,24 +43,24 @@ Steps:
     
 2. Login
 
-    - api/v1/account/login
-        Example payload:
-        {
-        "email":["This field is required."],
-        "password":["This field is required."]
-        }
+		- api/v1/account/login
+		Example payload:
+		{
+		"email":["This field is required."],
+		"password":["This field is required."]
+		}
 
-    - In response it will return a Token, we need to pass this token for upcomming request.
+		- In response it will return a Token, we need to pass this token for upcomming request.
 
 
 3. Dynamic add a pic and text for list of hotels stored on db.
 
-    - api/v1/hotel
-        Example payload:
-        {
-        "name":["This field is required."],
-        "address":["This field is required."],
-        "images":["No file was submitted."]
-        }
-        
-     - We can do CRUD operation on this endpoint.
+	    - api/v1/hotel
+		Example payload:
+		{
+		"name":["This field is required."],
+		"address":["This field is required."],
+		"images":["No file was submitted."]
+		}
+
+	     - We can do CRUD operation on this endpoint.
