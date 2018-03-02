@@ -64,3 +64,10 @@ Steps:
 		}
 
 	     - We can do CRUD operation on this endpoint.
+
+
+# Test
+
+You can run unittest using following command
+
+* python manage.py test api
